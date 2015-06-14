@@ -16,8 +16,22 @@ plugins {
     id "com.jfrog.bintray" version "1.1"
 }
 
-version "0.1-SNAPSHOT"
-group "org.grails.plugins"
+version "0.1"
+group "cofemei.plugins"
+
+bintray {
+  pkg {
+    userOrg = '' // If you want to publish to an organization
+    name = "cofemei.plugins:$project.name"
+    issueTrackerUrl = "https://github.com/cofemei/grails3-seo-friendly-urls/issues"
+    vcsUrl = "https://github.com/cofemei/grails3-seo-friendly-urls"
+    version {
+      attributes = ['grails-plugin': "cofemei.plugins:$project.name"]
+      name = project.version
+    }
+  }
+}
+
 
 apply plugin: 'maven-publish'
 apply plugin: 'eclipse'
