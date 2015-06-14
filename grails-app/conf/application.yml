@@ -1,0 +1,32 @@
+---
+grails:
+    profile: web-plugin
+    codegen:
+        defaultPackage: seo
+spring:
+    groovy:
+        template:
+            check-template-location: false
+
+---
+grails:
+    converters:
+        encoding: UTF-8
+    hibernate:
+        cache:
+            queries: false
+
+
+---
+dataSource:
+    pooled: true
+    jmxExport: true
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+environments:
+    test:
+        dataSource:
+            dbCreate: update
+            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
